@@ -27,3 +27,4 @@ if railCurNum == serialNum:
     print("Без дополнительной информации не узнать количество вагонов");
 else:
     print(f'В электричке {railCurNum + serialNum - 1} вагонов');
+
