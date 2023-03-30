@@ -11,8 +11,8 @@
 from random import randint
 
 numbers = int(input("Введите количество элементов: "))
-my_list = [i for i in range(1,numbers+1)]
-# my_list = [randint(1, 10) for _ in range(1, numbers + 1)]
+# my_list = [i for i in range(1,numbers+1)]
+my_list = [randint(1, 10) for _ in range(1, numbers + 1)]
 print(my_list)
 
 find_num = int(input("Введите искомое число: "))
@@ -21,3 +21,4 @@ for i in range(len(my_list)):
     if find_num == my_list[i]:
         count += 1
 print(f'Искомое число встречается {count} раз')
+print(my_list.count(find_num)) # сколько раз значение встречается в списке

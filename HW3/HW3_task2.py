@@ -8,20 +8,22 @@
 #     1 2 3 4 5
 #     6
 #     -> 5
-
+import random
 numbers = int(input("Введите количество элементов: "))
-my_list = [i for i in range(1,numbers+1)]
-# my_list = [randint(1, 10) for _ in range(1, numbers + 1)]
+my_list = [random.randint(1, 100) for _ in range(numbers)]
 
 print(my_list)
 
-find_num = float(input("Поиск ближайшего числа к числу: "))
-whole_num = int(find_num + (0.5 if find_num > 0 else -0.5))
+find_num = int(input("Поиск ближайшего числа к числу: "))
+nearest_num = my_list[0]
+dist = abs(find_num - nearest_num)
 
-if whole_num in my_list:
-    print(whole_num)
+for num in my_list:
+    if abs(num - find_num) < dist:
+        dist = abs(find_num - nearest_num)
+        nearest_num = num
+
+if my_list.count(find_num):
+    print(f'число {find_num} есть в списке')
 else:
-    if whole_num > max(my_list):
-        print(max(my_list))
-    else:
-        print(min(my_list))
+    print(f'ближайшее число - {nearest_num}')
